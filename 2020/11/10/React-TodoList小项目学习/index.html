@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+    <meta name="description" content="很久以前我就想拥有自己的博客，近期终于实现了。感谢github，感谢开源。同时在aws上也搭建了自己的博客，虽然使用wordpress源码，在搭建的过程中学习了很多的知识。&lt;br&gt; 很然目前很多人经常使用的电脑被智能手机所代替，腾讯博客也已经关闭。对于程序员的我博客仍然重要的。在相当长的时间里，我还将继续使用电脑，而不是手机。 &lt;br&gt; github上的博客系统注定是为程序员打造的，身为其中的我感到一丝自豪。&#34; 海子说面朝大海，春暖花开,如今我已是沦落天涯人">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    React TodoList小项目学习 |
+    
+    沦落天涯人，清霜伴我行</title>
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="沦落天涯人，清霜伴我行" type="application/atom+xml">
+</head>
+
+<body>
+<main class="content">
+  <section class="outer">
+  <article id="post-React-TodoList小项目学习" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      React TodoList小项目学习
+    </h1>
+  
+  
+
+
+
+
+            </header>
+            
+
+                
+                    <div class="article-meta">
+                        <a href="/2020/11/10/React-TodoList%E5%B0%8F%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/" class="article-date">
+  <time datetime="2020-11-10T01:57:56.000Z" itemprop="datePublished">2020-11-10</time>
+</a>
+                            
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+  </div>
+
+                    </div>
+                    
+
+                        
+                            
+    <div class="tocbot"></div>
+
+
+
+
+
+                                
+
+                                    <div class="article-entry" itemprop="articleBody">
+                                        
+
+
+                                            
+
+                                                
+                                                                    <p>在TodoList小项目中学习React的相关语法</p>
+<a id="more"></a>
+<h1 id="本篇文章将从例子中学习react具体语法"><a href="#本篇文章将从例子中学习react具体语法" class="headerlink" title="本篇文章将从例子中学习react具体语法"></a>本篇文章将从例子中学习react具体语法</h1><h2 id="简单实现"><a href="#简单实现" class="headerlink" title="简单实现"></a>简单实现</h2><p>隐藏最外层的标签：使用<strong>Fragment</strong><br>完整的小例子（<em>目前输入框还有些问题，数据不能回显</em>）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React,&#123; Component,Fragment &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="comment">// Fragment 可以将最外层的标签隐藏掉</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoList</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</span><br><span class="line">    <span class="comment">// 定义数据</span></span><br><span class="line">    <span class="function"><span class="title">constructor</span>(<span class="params">props</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">super</span>(props);</span><br><span class="line">        <span class="built_in">this</span>.state=&#123;</span><br><span class="line">            inputValue:<span class="string">&#x27;yy&#x27;</span>,</span><br><span class="line">            list:[<span class="string">&#x27;学习英文&#x27;</span>,<span class="string">&#x27;学习react&#x27;</span>],</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="title">handleInputChange</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(e.target.value);</span><br><span class="line">        <span class="built_in">this</span>.setState=(&#123;</span><br><span class="line">            inputValue : e.target.value</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="title">handleBtnClick</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.setState(&#123;</span><br><span class="line">            list : [...this.state.list,<span class="built_in">this</span>.state.inputValue],</span><br><span class="line">            inputValue:<span class="string">&#x27;&#x27;</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="title">handleItemDelete</span>(<span class="params">index</span>)</span>&#123;</span><br><span class="line">        <span class="comment">// immutable</span></span><br><span class="line">        <span class="comment">// state不允许做更改，否则性能优化有问题</span></span><br><span class="line">        <span class="built_in">console</span>.log(index);</span><br><span class="line">        <span class="keyword">const</span> list = [...this.state.list];</span><br><span class="line">        list.splice(index,<span class="number">1</span>);</span><br><span class="line">        <span class="built_in">this</span>.setState(&#123;</span><br><span class="line">          list:list</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="title">render</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span>(</span><br><span class="line">            &lt;Fragment&gt;</span><br><span class="line">                &lt;div&gt;</span><br><span class="line">                    &lt;input </span><br><span class="line">                        value=&#123;<span class="built_in">this</span>.state.inputValue&#125;</span><br><span class="line">                        onChange=&#123;<span class="built_in">this</span>.handleInputChange.bind(<span class="built_in">this</span>)&#125;</span><br><span class="line">                    /&gt;</span><br><span class="line">                    &lt;button onClick=&#123;<span class="built_in">this</span>.handleBtnClick.bind(<span class="built_in">this</span>)&#125;&gt;提交&lt;/button&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">                &lt;ul&gt;</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="built_in">this</span>.state.list.map(<span class="function">(<span class="params">item,index</span>) =&gt;</span> &#123;</span><br><span class="line">                            <span class="keyword">return</span> (</span><br><span class="line">                                &lt;li key=&#123;index&#125; </span><br><span class="line">                                    onClick=&#123;<span class="built_in">this</span>.handleItemDelete.bind(<span class="built_in">this</span>,index)&#125;</span><br><span class="line">                                    &gt;</span><br><span class="line">                                        &#123;item&#125;</span><br><span class="line">                                        &lt;/li&gt;</span><br><span class="line">                                    )</span><br><span class="line">                        &#125;)</span><br><span class="line">                    &#125;</span><br><span class="line">                &lt;/ul&gt;</span><br><span class="line">            &lt;/Fragment&gt;</span><br><span class="line"></span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> TodoList;</span><br></pre></td></tr></table></figure>
+<h2 id="TodoList-代码优化-输入框仍然不好用😂"><a href="#TodoList-代码优化-输入框仍然不好用😂" class="headerlink" title="TodoList 代码优化(输入框仍然不好用😂)"></a>TodoList 代码优化(输入框仍然不好用😂)</h2><p>使用了组件，子组件删除时调用父组件的方法。为了提高运行速度，将事件绑定在构造函数中实现。<br>下面是优化后的代码<br>TodoList.jsx</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React,&#123; Component,Fragment &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> TodoItem <span class="keyword">from</span> <span class="string">&#x27;./TodoItem&#x27;</span></span><br><span class="line"><span class="comment">// Fragment 可以将最外层的标签隐藏掉</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoList</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</span><br><span class="line">    <span class="comment">// 定义数据</span></span><br><span class="line">    <span class="function"><span class="title">constructor</span>(<span class="params">props</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">super</span>(props);</span><br><span class="line">        <span class="built_in">this</span>.state=&#123;</span><br><span class="line">            inputValue:<span class="string">&#x27;jj&#x27;</span>,</span><br><span class="line">            list:[<span class="string">&#x27;学习英文&#x27;</span>,<span class="string">&#x27;学习react&#x27;</span>],</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">this</span>.handleInputChange = <span class="built_in">this</span>.handleInputChange.bind(<span class="built_in">this</span>);</span><br><span class="line">        <span class="built_in">this</span>.handleItemDelete = <span class="built_in">this</span>.handleItemDelete.bind(<span class="built_in">this</span>);</span><br><span class="line">        <span class="built_in">this</span>.handleBtnClick = <span class="built_in">this</span>.handleBtnClick.bind(<span class="built_in">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="title">handleInputChange</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(e.target);</span><br><span class="line">        <span class="keyword">const</span> value = e.target.value;</span><br><span class="line">        <span class="built_in">this</span>.setState=(<span class="function">() =&gt;</span> (&#123;</span><br><span class="line">            inputValue: value</span><br><span class="line">        &#125;));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="title">handleBtnClick</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.setState(<span class="function">(<span class="params">prevState</span>) =&gt;</span> (&#123;</span><br><span class="line">            list : [...prevState.list,prevState.inputValue],</span><br><span class="line">            inputValue:<span class="string">&#x27;&#x27;</span></span><br><span class="line">        &#125;));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="title">handleItemDelete</span>(<span class="params">index</span>)</span>&#123;</span><br><span class="line">        <span class="comment">// immutable</span></span><br><span class="line">        <span class="comment">// state不允许做更改，否则性能优化有问题</span></span><br><span class="line">        <span class="built_in">console</span>.log(index);</span><br><span class="line">        <span class="built_in">this</span>.setState(<span class="function">(<span class="params">prevState</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">const</span> list = [...prevState.list]</span><br><span class="line">            list.splice(index,<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">return</span> &#123;list&#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 循环列表</span></span><br><span class="line">    <span class="function"><span class="title">getTodoItem</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.state.list.map(<span class="function">(<span class="params">item,index</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> (</span><br><span class="line">                    &lt;TodoItem</span><br><span class="line">                        key=&#123;index&#125;</span><br><span class="line">                        content=&#123;item&#125;</span><br><span class="line">                        index=&#123;index&#125;</span><br><span class="line">                        deleteItem=&#123;<span class="built_in">this</span>.handleItemDelete&#125;</span><br><span class="line">                    /&gt;</span><br><span class="line">            )</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="title">render</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span>(</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;div&gt;</span><br><span class="line">                    &lt;input</span><br><span class="line">                        value=&#123;<span class="built_in">this</span>.state.inputValue&#125;</span><br><span class="line">                        onChange=&#123;<span class="built_in">this</span>.handleInputChange&#125;</span><br><span class="line">                    /&gt;</span><br><span class="line">                    &lt;button onClick=&#123;<span class="built_in">this</span>.handleBtnClick&#125;&gt;提交&lt;/button&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">                &lt;ul&gt;</span><br><span class="line">                    &#123;<span class="built_in">this</span>.getTodoItem()&#125;</span><br><span class="line">                &lt;/ul&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> TodoList;</span><br></pre></td></tr></table></figure>
+<p>子组件 <strong><em>TodoItem.jsx</em></strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React,&#123;Component&#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoItem</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="title">constructor</span>(<span class="params">props</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">super</span>(props);</span><br><span class="line">        <span class="built_in">this</span>.handClick = <span class="built_in">this</span>.handClick.bind(<span class="built_in">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="title">handClick</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="comment">//调用父组件方法</span></span><br><span class="line">        <span class="keyword">const</span> &#123;deleteItem,index&#125; = <span class="built_in">this</span>.props;</span><br><span class="line">        deleteItem(index);</span><br><span class="line">        <span class="comment">//this.props.deleteItem(this.props.content)</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 避免重复渲染</span></span><br><span class="line">    <span class="function"><span class="title">shouldComponentUpdate</span>(<span class="params">nextProps,nextState</span>)</span>&#123;</span><br><span class="line">        <span class="function"><span class="title">if</span>(<span class="params">nextProps.content != <span class="built_in">this</span>.props.content</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="title">render</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;div onClick = &#123;<span class="built_in">this</span>.handClick&#125;&gt;</span><br><span class="line">                &#123;test&#125; - &#123;content&#125;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">TodoItem.propType = &#123;</span><br><span class="line">    <span class="comment">//isRequired 含义：如果没有传值也会报错</span></span><br><span class="line">    test: PropTypes.string.isRequired,</span><br><span class="line">    <span class="comment">//字符串</span></span><br><span class="line">    content: PropTypes.string,</span><br><span class="line">    <span class="comment">//函数</span></span><br><span class="line">    deleteItem: PropTypes.func,</span><br><span class="line">    <span class="comment">//数值型</span></span><br><span class="line">    index: PropTypes.number</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//默认值，没有接收到值，显示默认值</span></span><br><span class="line">TodoItem.defaultProps = &#123;</span><br><span class="line">    test: <span class="string">&#x27;hello word&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> TodoItem;</span><br></pre></td></tr></table></figure>
+<h2 id="redux-实现todolist功能"><a href="#redux-实现todolist功能" class="headerlink" title="redux 实现todolist功能"></a>redux 实现todolist功能</h2><p><strong>使用redux完成todolist功能</strong> ，<br>样式使用了<strong>antd</strong>这次 <strong><em>input彻底好用了</em></strong><br><strong>主要文件</strong><br>index.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">&#x27;redux&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> reducer <span class="keyword">from</span> <span class="string">&#x27;./reducer&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = createStore(reducer);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> store</span><br></pre></td></tr></table></figure>
+
+<p>TodoList.js</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React,&#123; Component &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;antd/dist/antd.css&#x27;</span>; <span class="comment">// or &#x27;antd/dist/antd.less&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; Input, Button, List, Typography, Divider&#125; <span class="keyword">from</span> <span class="string">&#x27;antd&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">&#x27;./store/index.js&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//list测试数据</span></span><br><span class="line"><span class="keyword">const</span> data = [</span><br><span class="line">    <span class="string">&#x27;Racing car sprays burning fuel into crowd.&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;Japanese princess to wed commoner.&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;Australian walks 100km after outback crash.&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;Man charged over missing wedding girl.&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;Los Angeles battles huge wildfires.&#x27;</span>,</span><br><span class="line">  ];</span><br><span class="line">  </span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 使用antd ui框架 https://ant.design/components/list-cn/#header</span></span><br><span class="line"><span class="comment"> * 使用 redux 框架</span></span><br><span class="line"><span class="comment"> * Input 可以正常使用了</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoList</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="title">constructor</span>(<span class="params">props</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">super</span>(props);</span><br><span class="line">        <span class="built_in">this</span>.handleInputChange = <span class="built_in">this</span>.handleInputChange.bind(<span class="built_in">this</span>);</span><br><span class="line">        <span class="built_in">console</span>.log(store.getState());</span><br><span class="line">        <span class="built_in">this</span>.state = store.getState();</span><br><span class="line">        <span class="built_in">this</span>.handleStoreChange = <span class="built_in">this</span>.handleStoreChange.bind(<span class="built_in">this</span>);</span><br><span class="line">        <span class="built_in">this</span>.handleBtnClick = <span class="built_in">this</span>.handleBtnClick.bind(<span class="built_in">this</span>);</span><br><span class="line">        store.subscribe(<span class="built_in">this</span>.handleStoreChange)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="title">handleInputChange</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">const</span> action = &#123;</span><br><span class="line">            type: <span class="string">&#x27;change_input_value&#x27;</span>,</span><br><span class="line">            value: e.target.value</span><br><span class="line">        &#125;</span><br><span class="line">        store.dispatch(action);</span><br><span class="line">        <span class="built_in">console</span>.log(e.target);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="title">handleStoreChange</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.setState(store.getState());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="title">handleBtnClick</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">const</span> action =&#123;</span><br><span class="line">            type: <span class="string">&#x27;add_todo_item&#x27;</span></span><br><span class="line">        &#125;;</span><br><span class="line">        store.dispatch(action);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="title">handleItemDelete</span>(<span class="params">index</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">const</span> action = &#123;</span><br><span class="line">            type: <span class="string">&#x27;delete_todo_item&#x27;</span>,</span><br><span class="line">            index</span><br><span class="line">        &#125;</span><br><span class="line">        store.dispatch(action);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="title">render</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span>(</span><br><span class="line">            &lt;div style=&#123;&#123;<span class="attr">marginTop</span>:<span class="string">&#x27;10px&#x27;</span>,<span class="attr">marginLeft</span>:<span class="string">&#x27;10px&#x27;</span>&#125;&#125;&gt;</span><br><span class="line">                &lt;div&gt;</span><br><span class="line">                    &lt;input </span><br><span class="line">                        value=&#123;<span class="built_in">this</span>.state.inputValue&#125; </span><br><span class="line">                        placeholder=<span class="string">&#x27;todo info&#x27;</span> </span><br><span class="line">                        style=&#123;&#123;<span class="attr">marginRight</span>:<span class="string">&#x27;10px&#x27;</span>,<span class="attr">width</span>:<span class="string">&#x27;230px&#x27;</span>&#125;&#125; </span><br><span class="line">                        onChange=&#123;<span class="built_in">this</span>.handleInputChange&#125;</span><br><span class="line">                    /&gt;</span><br><span class="line">                    &lt;Button type=<span class="string">&quot;primary&quot;</span> onClick=&#123;<span class="built_in">this</span>.handleBtnClick&#125;&gt;提交&lt;/Button&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">                &lt;List</span><br><span class="line">                    style=&#123;&#123;<span class="attr">marginTop</span>: <span class="string">&#x27;10px&#x27;</span>,<span class="attr">width</span>: <span class="string">&#x27;300px&#x27;</span>&#125;&#125;</span><br><span class="line">                    bordered</span><br><span class="line">                    dataSource=&#123;<span class="built_in">this</span>.state.list&#125;</span><br><span class="line">                    renderItem=&#123;<span class="function">(<span class="params">item,index</span>) =&gt;</span> (</span><br><span class="line">                        &lt;List.Item onClick=&#123;<span class="built_in">this</span>.handleItemDelete.bind(<span class="built_in">this</span>,index)&#125;&gt;</span><br><span class="line">                            &#123;item&#125;</span><br><span class="line">                        &lt;/List.Item&gt;</span><br><span class="line">                    )&#125;</span><br><span class="line">                /&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> TodoList;</span><br></pre></td></tr></table></figure>
+
+<p>创建store文件夹，新建两个文件<br>index.js</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">&#x27;redux&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> reducer <span class="keyword">from</span> <span class="string">&#x27;./reducer&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = createStore(reducer);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> store;</span><br></pre></td></tr></table></figure>
+<p>reducer.js</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; act &#125; <span class="keyword">from</span> <span class="string">&quot;react-dom/test-utils&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">&quot;.&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> defaultState =&#123;</span><br><span class="line">    inputValue: <span class="string">&#x27;123&#x27;</span>,</span><br><span class="line">    list: [<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//reducer可以接收state，但是不能修改state</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> (state = defaultState, action) =&gt; &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (action.type === <span class="string">&#x27;change_input_value&#x27;</span>)&#123;</span><br><span class="line">        <span class="keyword">const</span> newState = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(state));</span><br><span class="line">        newState.inputValue = action.value;</span><br><span class="line">        <span class="keyword">return</span> newState;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (action.type === <span class="string">&#x27;add_todo_item&#x27;</span>)&#123;</span><br><span class="line">        <span class="keyword">const</span> newState = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(state));</span><br><span class="line">        newState.list.push(newState.inputValue);</span><br><span class="line">        newState.inputValue = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">        <span class="built_in">console</span>.log(newState);</span><br><span class="line">        <span class="keyword">return</span> newState;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="title">if</span>(<span class="params">action.type === <span class="string">&#x27;delete_todo_item&#x27;</span></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">const</span> newState = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(state));</span><br><span class="line">        newState.list.splice(action.index,<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> newState;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> state;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+                                                                        
+                                    </div>
+                                    <footer class="article-footer">
+                                        <a data-url="http://example.com/2020/11/10/React-TodoList%E5%B0%8F%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/" data-id="cki0jh1oh0011bnxoe4wt133o" class="article-share-link">
+                                            Share
+                                        </a>
+                                        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8C%87%E5%AF%BC/" rel="tag">指导</a></li></ul>
+
+                                    </footer>
+
+    </div>
+
+    
+        
+  <nav class="article-nav">
+    
+      <a href="/2020/11/12/REACT-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="article-nav-link">
+        <strong class="article-nav-caption">Newer</strong>
+        <div class="article-nav-title">
+          
+            REACT 基础知识
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/10/31/AWS%E6%95%99%E7%A8%8B%EF%BC%88%E6%90%AD%E5%BB%BAwordpress%E5%8D%9A%E5%AE%A2%EF%BC%89/" class="article-nav-link">
+        <strong class="article-nav-caption">Older</strong>
+        <div class="article-nav-title">AWS教程（搭建wordpress博客）</div>
+      </a>
+    
+  </nav>
+
+
+            
+
+                
+                    
+                        
+                            
+
+</article>
+</section>
+  <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+    <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>&copy; 2020 沦落天涯人，清霜伴我行</li>
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>Theme  <a target="_blank" rel="noopener" href="https://github.com/zhwangart/hexo-theme-ocean">Ocean</a></li>
+    </ul>
+  </div>
+</footer>
+
+</main>
+<aside class="sidebar">
+  <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="/images/hexo.svg" alt="沦落天涯人，清霜伴我行"></a>
+    </div>
+  
+  <ul class="nav nav-main">
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/">Home</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/archives">Archives</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/gallery">Gallery</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/about">About</a>
+      </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        Search
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+          <i class="fe fe-feed"></i>
+        </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+</aside>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+
+</body>
+</html>
