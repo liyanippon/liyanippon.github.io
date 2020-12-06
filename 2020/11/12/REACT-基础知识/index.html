@@ -142,11 +142,10 @@
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> initListAction = <span class="function">(<span class="params">data</span>) =&gt;</span> (&#123;</span><br><span class="line">    type: INIT_LIST_ACTION,</span><br><span class="line">    data</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p><strong><em>reducer.js</em></strong></p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">if</span>(<span class="params">action.type === INIT_LIST_ACTION</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> newState = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(state));</span><br><span class="line">    newState.list = action.data;</span><br><span class="line">    <span class="keyword">return</span> newState;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
                                                                         
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="http://example.com/2020/11/12/REACT-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" data-id="cki0k21lz0011k3xofzb6f0ju" class="article-share-link">
+                                        <a data-url="http://example.com/2020/11/12/REACT-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" data-id="ckice6jy2001197xo8cyhekte" class="article-share-link">
                                             Share
                                         </a>
                                         
