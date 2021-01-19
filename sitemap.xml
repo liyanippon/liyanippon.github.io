@@ -4,7 +4,7 @@
   <url>
     <loc>http://example.com/2021/01/18/%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AF%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/</loc>
     
-    <lastmod>2021-01-18</lastmod>
+    <lastmod>2021-01-19</lastmod>
     
   </url>
   
@@ -79,6 +79,13 @@
   </url>
   
   <url>
+    <loc>http://example.com/categories/index.html</loc>
+    
+    <lastmod>2020-11-22</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://example.com/about/index.html</loc>
     
     <lastmod>2020-11-22</lastmod>
@@ -87,13 +94,6 @@
   
   <url>
     <loc>http://example.com/archives/index.html</loc>
-    
-    <lastmod>2020-11-22</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/categories/index.html</loc>
     
     <lastmod>2020-11-22</lastmod>
     
@@ -156,14 +156,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/2020/10/28/How-to-Use-Mysql-in-Aws/</loc>
+    <loc>http://example.com/2020/10/31/AWS%E6%95%99%E7%A8%8B%EF%BC%88%E6%90%AD%E5%BB%BAwordpress%E5%8D%9A%E5%AE%A2%EF%BC%89/</loc>
     
     <lastmod>2020-11-22</lastmod>
     
   </url>
   
   <url>
-    <loc>http://example.com/2020/10/31/AWS%E6%95%99%E7%A8%8B%EF%BC%88%E6%90%AD%E5%BB%BAwordpress%E5%8D%9A%E5%AE%A2%EF%BC%89/</loc>
+    <loc>http://example.com/2020/10/28/How-to-Use-Mysql-in-Aws/</loc>
     
     <lastmod>2020-11-22</lastmod>
     
@@ -186,7 +186,7 @@
 
   <url>
     <loc>http://example.com/</loc>
-    <lastmod>2021-01-18</lastmod>
+    <lastmod>2021-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -194,35 +194,35 @@
   
   <url>
     <loc>http://example.com/tags/%E6%8C%87%E5%AF%BC/</loc>
-    <lastmod>2021-01-18</lastmod>
+    <lastmod>2021-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/tags/%E6%84%9F%E6%83%B3/</loc>
-    <lastmod>2021-01-18</lastmod>
+    <lastmod>2021-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/tags/%E6%83%85%E6%84%9F/</loc>
-    <lastmod>2021-01-18</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/%E8%A7%82%E5%85%89/</loc>
-    <lastmod>2021-01-18</lastmod>
+    <lastmod>2021-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/tags/%E7%BE%8E%E9%A3%9F/</loc>
-    <lastmod>2021-01-18</lastmod>
+    <lastmod>2021-01-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/%E8%A7%82%E5%85%89/</loc>
+    <lastmod>2021-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -231,21 +231,21 @@
   
   <url>
     <loc>http://example.com/categories/%E6%8A%80%E6%9C%AF/</loc>
-    <lastmod>2021-01-18</lastmod>
+    <lastmod>2021-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/categories/%E6%96%87%E5%8C%96/</loc>
-    <lastmod>2021-01-18</lastmod>
+    <lastmod>2021-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/categories/%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2021-01-18</lastmod>
+    <lastmod>2021-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
