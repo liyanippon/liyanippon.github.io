@@ -86,14 +86,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/archives/index.html</loc>
+    <loc>http://example.com/categories/index.html</loc>
     
     <lastmod>2020-11-22</lastmod>
     
   </url>
   
   <url>
-    <loc>http://example.com/categories/index.html</loc>
+    <loc>http://example.com/archives/index.html</loc>
     
     <lastmod>2020-11-22</lastmod>
     
@@ -156,6 +156,13 @@
   </url>
   
   <url>
+    <loc>http://example.com/2020/10/31/AWS%E6%95%99%E7%A8%8B%EF%BC%88%E6%90%AD%E5%BB%BAwordpress%E5%8D%9A%E5%AE%A2%EF%BC%89/</loc>
+    
+    <lastmod>2020-11-22</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://example.com/2020/10/28/How-to-Use-Mysql-in-Aws/</loc>
     
     <lastmod>2020-11-22</lastmod>
@@ -171,13 +178,6 @@
   
   <url>
     <loc>http://example.com/2020/10/31/emacs-%E6%95%99%E7%A8%8B/</loc>
-    
-    <lastmod>2020-11-22</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2020/10/31/AWS%E6%95%99%E7%A8%8B%EF%BC%88%E6%90%AD%E5%BB%BAwordpress%E5%8D%9A%E5%AE%A2%EF%BC%89/</loc>
     
     <lastmod>2020-11-22</lastmod>
     
